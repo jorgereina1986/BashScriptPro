@@ -1,6 +1,10 @@
 
 #!/bin/bash
 
+baseUrl="https://github.com/"
+username="jorgereina1986"
+ext=".git"
+
 echo "Name your project: "
 
 read directoryName
@@ -27,14 +31,16 @@ git commit -m "intitial commit"
 #curl -u jorgereina1986 https://api.github.com/user/repos -d "{\"name\": \"$currentDir\", \"description\": \"\", \"private\": false, \"has_issues\": true, \"has_downloads\": true, \"has_wiki\": false}"
 
 #Creating a post request to Github API to create repo
-STATUS=$(curl -s -o /dev/null -w '%{http_code}' -u jorgereina1986 https://api.github.com/user/repos -d "{\"name\": \"$directoryName\", \"description\": \"\", \"private\": false, \"has_issues\": true, \"has_downloads\": true, \"has_wiki\": false}")
+STATUS=$(curl -s -o /dev/null -w '%{http_code}' -u $username https://api.github.com/user/repos -d "{\"name\": \"$directoryName\", \"description\": \"\", \"private\": false, \"has_issues\": true, \"has_downloads\": true, \"has_wiki\": false}")
 
 #If http response is 201 then repo creation was suceessfull
-if [$STATUS -eq 201]; then
+if [[ $STATUS -eq 201 ]]; then
 	echo "Repository creation sucessfull"
 	#TODO get github url and set commands
+	git remote add origin $baseUrl$username/$directoryName$ext
+	git push origin master
 
-	break
+
 #If not 
 else
 	echo "Uh oh! Something went wrong"
