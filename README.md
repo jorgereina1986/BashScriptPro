@@ -1,6 +1,6 @@
 # BashScriptPro
 
-##The Problem:  
+## The Problem:  
 It's annoying to go through the whole setup of creating a project and then also creating a remote project on Github and then linking it
 
 ## The Solution:
