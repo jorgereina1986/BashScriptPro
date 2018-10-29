@@ -30,7 +30,7 @@ git commit -m "intitial commit"
 STATUS=$(curl -s -o /dev/null -w '%{http_code}' -u jorgereina1986 https://api.github.com/user/repos -d "{\"name\": \"$directoryName\", \"description\": \"\", \"private\": false, \"has_issues\": true, \"has_downloads\": true, \"has_wiki\": false}")
 
 #If http response is 201 then repo creation was suceessfull
-if [STATUS -eq 201]; then
+if [$STATUS -eq 201]; then
 	echo "Repository creation sucessfull"
 	#TODO get github url and set commands
 
