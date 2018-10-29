@@ -1,5 +1,11 @@
 # BashScriptPro
 
+The Problem:  
+It's annoying to go through the whole setup of creating a project and then also creating a remote project on Github and then linking it
+
+The Solution:
+I built a script that creates a local repo, remote repo, README.md and make an initial commit
+
 Instructions to use this script:  
  
 -Navigate to the directory where you want to create your project  
