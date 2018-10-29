@@ -19,7 +19,5 @@ Once the above steps are completed this:
   -Create a README.md  
   -Add  your files  
   -Commit your files  
-    
- On the works:  
-    -Linking local repo to remote repo  
-    -pushing changes to Master branch  
+  -Linking local repo to remote repo  
+  -pushing changes to Master branch  
