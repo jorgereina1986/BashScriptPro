@@ -27,9 +27,6 @@ git init
 git add .
 git commit -m "intitial commit"
 
-#Making POST request to create repo on Github
-#curl -u jorgereina1986 https://api.github.com/user/repos -d "{\"name\": \"$currentDir\", \"description\": \"\", \"private\": false, \"has_issues\": true, \"has_downloads\": true, \"has_wiki\": false}"
-
 #Creating a post request to Github API to create repo
 STATUS=$(curl -s -o /dev/null -w '%{http_code}' -u $username https://api.github.com/user/repos -d "{\"name\": \"$directoryName\", \"description\": \"\", \"private\": false, \"has_issues\": true, \"has_downloads\": true, \"has_wiki\": false}")
 
